@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>My Webcam application</title>
+    <script src="webcam.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    </head>
+    
+    <body>
+        <div>
+            <video autoplay playsinline muted id='wc' width="10" height="224"></video>
+        </div>
+    </body>
+    <script>
+        let model
+        let mobileNet
+        const webcam = new Webcam(document.getElementById("wc"))
+        async function init(){
+            await webcam.setup()
+        }
+        init()
+        async function loadMobileNet(){
+            
+        }
+    </script>
+</html>

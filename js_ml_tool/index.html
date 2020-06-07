@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title> My Smart ML tool </title>
+    </head>
+<body>
+    input1 <input type="text" id="i1"/>
+    <br/>
+    input2 <input type="text" id="i2"/>
+    <input type="button" id="ctb" value ='calculate'/>
+    <input type="button" id="crb" value="clear"/>
+    <p id="p1">Start_caliculating!</p>
+    <script lang = "js">
+        var number1, number2, number3;
+        var input1, input2, calculateButton, clearButton, paragraph;
+        
+        input1 = document.getElementById('i1')
+        input2 = document.getElementById('i2')
+        calculateButton = document.getElementById('ctb')
+        clearButton = document.getElementById('crb')
+        paragraph = document.getElementById('p1')
+        
+        function erase(){
+            input1.value = null
+            input2.value = null
+        }
+        function calculate(){
+            var output_number
+            output_number = parseInt(input1.value) + parseInt(input2.value)
+            paragraph.innerHTML = output_number
+        }
+                   
+        calculateButton.addEventListener("click", calculate);
+        clearButton.addEventListener("click", erase);
+
+    </script>
+</body>
+</html>

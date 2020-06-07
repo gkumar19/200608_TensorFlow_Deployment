@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>My Custom Page</title></head>
+    <script src =js.txt> </script>
+    <script lang="js">
+        const model = tf.sequential()
+        model.add(tf.layers.dense({units: 1, inputShape: [1]}))
+        model.compile({loss: 'meanSquaredError', optimizer: 'sgd'})
+        model.summary()
+        
+        const x = tf.tensor2d([1, 2, 3, 4, 5, 6, 7, 8, 9], [9, 1])
+        const y = tf.tensor2d([10, 20, 30, 40, 50, 60, 70, 80, 90], [9, 1])
+        
+        async function doTraining(model){
+            const history = await model.fit(x, y,{
+                epochs: 500, callbacks: {
+                    onEpochEnd: async(epoch, logs) => console.log(epoch+
+                                                                  'loss:' +
+                                                                 logs.loss)
+                }})
+        }
+        doTraining(model).then(() => {
+            alert(model.predict(tf.tensor2d([10],[1,1])))})
+        alert('prediction \n' + model.predict(tf.tensor2d([10], [1,1])));
+    
+    </script>
+<body>
+    <h1> My FIrst Page </h1>
+</body>
+</html>

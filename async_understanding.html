@@ -1,0 +1,33 @@
+<htm>
+<head>
+    </head>
+    <script lang="js">
+        async function myFunction1(){
+            async function myDeep(){
+                await console.log('deep1')
+                await console.log('deep2')
+                await console.log('deep3')
+                await console.log('deep4')
+            }
+            await console.log('1_inside_async_await1')
+            await myDeep() //try removing await from this line
+            await console.log('1_inside_async_await2')
+            await console.log('1_inside_async_await3')
+            console.log('1_inside_async')
+        }
+        
+        async function myFunction2(){
+            console.log('2_inside_async_await1')
+            await console.log('2_inside_async_await2')
+            await console.log('2_inside_async_await3')
+            await console.log('2_inside_async')
+            
+        }
+        myFunction1()
+        myFunction2()
+        console.log('outside_async')
+        
+    </script>
+    <body>
+    </body>
+</htm>
